@@ -18,6 +18,7 @@ namespace Proiect_Mobile.Data
             _database.CreateTableAsync<Rezervare>().Wait();
             _database.CreateTableAsync<Product>().Wait();
             _database.CreateTableAsync<ListProduct>().Wait();
+            _database.CreateTableAsync<Scoala>().Wait();
         }
         public Task<List<Rezervare>> GetRezervareAsync()
         {
@@ -91,6 +92,22 @@ namespace Proiect_Mobile.Data
         {
             return _database.QueryAsync<ListProduct>("select * from ListProduct");
         }
+        public Task<List<Scoala>> GetScoalaAsync()
+        {
+            return _database.Table<Scoala>().ToListAsync();
+        }
+        public Task<int> SaveScoalaAsync(Scoala scoala)
+        {
+            if (scoala.ID != 0)
+            {
+                return _database.UpdateAsync(scoala);
+            }
+            else
+            {
+                return _database.InsertAsync(scoala);
+            }
+        }
+
     }
 }
     

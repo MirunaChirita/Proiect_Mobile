@@ -13,6 +13,8 @@ public partial class RezervariPage : ContentPage
     {
         var slist = (Rezervare)BindingContext;
         slist.DataProgramare = DateTime.UtcNow;
+        Scoala selectedScoala = (ScoalaPicker.SelectedItem as Scoala);
+        slist.ScoalaID = selectedScoala.ID;
         await App.Database.SaveRezervareAsync(slist);
         await Navigation.PopAsync();
     }
@@ -34,6 +36,10 @@ public partial class RezervariPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+        var items = await App.Database.GetScoalaAsync();
+        ScoalaPicker.ItemsSource = (System.Collections.IList)items;
+        ScoalaPicker.ItemDisplayBinding = new Binding("ScoalaDetails");
+
         var shopl = (Rezervare)BindingContext;
 
         listView.ItemsSource = await App.Database.GetListProductsAsync(shopl.ID);
@@ -42,6 +48,7 @@ public partial class RezervariPage : ContentPage
     {
         Product product;
         var shopList = (Rezervare)BindingContext;
+        
         if (listView.SelectedItem != null)
         {
             product = listView.SelectedItem as Product;

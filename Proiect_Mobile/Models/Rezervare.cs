@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Proiect_Mobile.Models
 {
@@ -16,5 +17,7 @@ namespace Proiect_Mobile.Models
         public string Descriere { get; set; }
         
         public DateTime DataProgramare { get; set; }
+        [ForeignKey(typeof(Scoala))]
+        public int ScoalaID { get; set; }
     }
 }

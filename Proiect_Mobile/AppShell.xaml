@@ -19,6 +19,10 @@
         Title="Rezervari"
         ContentTemplate="{DataTemplate local:RezervareEntryPage}"
         />
+        <ShellContent
+ Title="Scoli"
+ ContentTemplate="{DataTemplate local:ScoalaEntryPage}"
+ />
     </TabBar>
 
 </Shell>

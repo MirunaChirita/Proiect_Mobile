@@ -11,7 +11,7 @@
             <Editor.Behaviors>
                 <local:ValidationBehaviour />
             </Editor.Behaviors>
-            </Editor>
+            </Editor>            <Picker x:Name="ScoalaPicker" Title="Enter Scoala Name"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
