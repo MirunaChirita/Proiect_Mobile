@@ -3,21 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiect_Mobile.RezervariPage"
              Title="RezervariPage">
-    <StackLayout Margin="20">
-        <Editor Placeholder="Enter the description of the booking"
+    <ContentPage.Content xmlns:local="clr-namespace:Proiect_Mobile">
+        <StackLayout Margin="20">
+            <Editor Placeholder="Enter the description of the booking"
  Text="{Binding Descriere}"
- HeightRequest="100" />
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button Text="Save"
+ HeightRequest="50" >
+            <Editor.Behaviors>
+                <local:ValidationBehaviour />
+            </Editor.Behaviors>
+            </Editor>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save"
  Clicked="OnSaveButtonClicked" />
 
-            <Button Grid.Column="1"
+                <Button Grid.Column="1"
  Text="Delete"
  Clicked="OnDeleteButtonClicked"/>
-        </Grid>
-    </StackLayout>
+                <Button Text="Delete item" MaximumWidthRequest="300" Clicked="OnDeleteItemButtonClicked"/>
+            </Grid>
+            <ListView x:Name="listView"
+ Margin="20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Detail="{Binding Descriere}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Add/Choose Service to book" MaximumWidthRequest="300"
+Clicked="OnChooseButtonClicked"/>
+        </StackLayout>
+</ContentPage.Content>
 </ContentPage>
