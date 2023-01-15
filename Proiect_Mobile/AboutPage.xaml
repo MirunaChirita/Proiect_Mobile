@@ -5,14 +5,10 @@
              Title="AboutPage">
     <VerticalStackLayout Spacing="10" Margin="10">
         <HorizontalStackLayout Spacing="10">
-            <Image Source="shop_list.png"
- SemanticProperties.Description="My Shopping List"
-HeightRequest="64" />
-            <Label FontSize="22" FontAttributes="Bold" Text="My Shopping
-Lists" VerticalOptions="End" />
-            <Label FontSize="22" Text="v1.0" VerticalOptions="End" />
+            <Image Source="shop_list.png" SemanticProperties.Description="Despre noi" HeightRequest="64" />
+           
         </HorizontalStackLayout>
-        <Label Text="This app will help you to manage your shopping lists" />
+        <Label Text="Experiența pe care monitorii noștri o aduc în cadrul partiei garantează faptul că suntem gata să răspundem cu succes oricărei solicitări din partea clienților noștri, indiferent de vârsta sau pregătirea tehnică a acestora. De la ore de inițiere până la cursuri realizate în tehnica off-piste și tehnica schiului de tură, școala noastră promite să ofere lecții de schi și snowboard la ce mai ridicate standarde, satisfăcând cerințele și necesitățile clienților noștri." />
 
     </VerticalStackLayout>
 </ContentPage>

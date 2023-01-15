@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiect_Mobile.RezervariPage"
              Title="RezervariPage">
-    <ContentPage.Content xmlns:local="clr-namespace:Proiect_Mobile">
+    <ContentPage.Content xmlns:local="clr-namespace:Proiect_Mobile">
+
         <StackLayout Margin="20">
             <Editor Placeholder="Enter the description of the booking"
  Text="{Binding Descriere}"
@@ -11,7 +12,8 @@
             <Editor.Behaviors>
                 <local:ValidationBehaviour />
             </Editor.Behaviors>
-            </Editor>            <Picker x:Name="ScoalaPicker" Title="Enter Scoala Name"/>
+            </Editor>
+            <Picker x:Name="ScoalaPicker" Title="Enter Scoala Name"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -34,7 +36,8 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Button Text="Add/Choose Service to book" MaximumWidthRequest="300"
-Clicked="OnChooseButtonClicked"/>
+Clicked="OnChooseButtonClicked"/>
+
         </StackLayout>
 </ContentPage.Content>
 </ContentPage>
