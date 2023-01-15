@@ -19,13 +19,10 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save"
- Clicked="OnSaveButtonClicked" />
+                <Button Text="Save" Clicked="OnSaveButtonClicked" />
 
-                <Button Grid.Column="1"
- Text="Delete"
- Clicked="OnDeleteButtonClicked"/>
-                <Button Text="Delete item" MaximumWidthRequest="300" Clicked="OnDeleteItemButtonClicked"/>
+                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+                
             </Grid>
             <ListView x:Name="listView"
  Margin="20">
@@ -35,9 +32,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Add/Choose Service to book" MaximumWidthRequest="300"
-Clicked="OnChooseButtonClicked"/>
-
+            <Button Text="Add/Choose Service to book" MaximumWidthRequest="300" Clicked="OnChooseButtonClicked"/>
+            <Button Grid.Column="2" Text="Delete item" MaximumWidthRequest="300" Clicked="OnDeleteItemButtonClicked"/>
         </StackLayout>
 </ContentPage.Content>
 </ContentPage>
